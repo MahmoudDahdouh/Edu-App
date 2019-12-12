@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Edu App</string>
+    <string name="log_in">log in</string>
+    <string name="sign_up">sign up</string>
+    <string name="log_in_to_your_account">Log in to your account</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="account_type">Account Type</string>
+    <string name="continue_as_a_guest">continue as a guest</string>
+    <string name="email_address">Email address</string>
+    <string name="manual_sign_up">Manual Sign up</string>
+
+
+    <string-array name="types_of_account">
+        <item>Teacher</item>
+        <item>Student</item>
+        <item>Parent</item>
+        <item>Manager</item>
+    </string-array>
+
 </resources>
