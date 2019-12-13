@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:fontFamily="@font/roboto"
             android:text="@string/manual_sign_up"
             android:textColor="@color/text_color"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -30,11 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginTop="@dimen/marginTop_4"
             android:layout_marginEnd="@dimen/margin_16"
+            android:hint="@string/username"
             android:background="@drawable/bg_input_fields"
             android:elevation="4dp"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textDirection="locale"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,11 +51,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginTop="@dimen/marginTop_4"
             android:layout_marginEnd="@dimen/margin_16"
             android:background="@drawable/bg_input_fields"
             android:elevation="4dp"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:textDirection="locale"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,7 +73,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_input_fields"
             android:elevation="4dp"
-            android:inputType="textPassword" />
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textDirection="locale"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,13 +93,15 @@
             android:elevation="4dp"
             android:entries="@array/types_of_account" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             style="@style/edittext_style_register"
+
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="@dimen/margin_16"
+            app:backgroundTint="@color/colorPrimaryDark"
             android:elevation="4dp"
-            android:shadowColor="@color/colorAccent"
+
             android:text="@string/sign_up" />
 
 

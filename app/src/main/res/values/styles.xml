@@ -9,9 +9,8 @@
     </style>
 
     <style name="edittext_style_register">
-        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginTop">@dimen/marginTop_4</item>
         <item name="android:layout_marginStart">@dimen/margin_16</item>
         <item name="android:layout_marginEnd">@dimen/margin_16</item>
-        <item name="android:elevation">16dp</item>
     </style>
 </resources>

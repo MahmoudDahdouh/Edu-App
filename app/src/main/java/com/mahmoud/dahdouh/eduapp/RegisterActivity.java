@@ -1,6 +1,7 @@
 package com.mahmoud.dahdouh.eduapp;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class RegisterActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
+    private TextView tv_register_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         tabLayout = findViewById(R.id.tablayout_register);
         viewPager = findViewById(R.id.viewpager_register);
+        tv_register_title = findViewById(R.id.tv_login_register);
 
         PagerAdapter pagerAdapter = new PagerAdapter(this);
-
-
         viewPager.setAdapter(pagerAdapter);
 
 
@@ -33,14 +34,36 @@ public class RegisterActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 tab.setText(getText(R.string.log_in));
+
                                 break;
                             case 1:
                                 tab.setText(getText(R.string.sign_up));
+
                                 break;
                         }
                     }
                 }).attach();
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        tv_register_title.setText(getText(R.string.log_in));
+                        break;
+                    case 1:
+                        tv_register_title.setText(getText(R.string.sign_up));
+                        break;
+                }
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
     }
 }
