@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:text="@string/log_in_to_your_account"
-            android:textColor="@color/text_color"
+            android:textColor="@color/font_color"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="@dimen/margin_16"
             android:elevation="4dp"
-            app:backgroundTint="@color/colorPrimaryDark"
+            app:backgroundTint="@color/colorPrimary"
             android:text="@string/log_in" />
 
         <com.google.android.material.button.MaterialButton
@@ -90,8 +90,8 @@
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
             android:text="@string/continue_as_a_guest"
-            android:textColor="@color/colorPrimaryDark"
-            app:rippleColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimary"
+            app:rippleColor="@color/colorPrimary" />
 
 
     </LinearLayout>

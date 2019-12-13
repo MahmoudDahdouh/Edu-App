@@ -34,11 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 tab.setText(getText(R.string.log_in));
-
                                 break;
                             case 1:
                                 tab.setText(getText(R.string.sign_up));
-
                                 break;
                         }
                     }

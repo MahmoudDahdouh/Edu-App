@@ -21,7 +21,7 @@
         android:paddingStart="@dimen/padding_16"
         android:text="@string/log_in"
         android:textAllCaps="true"
-        android:textColor="@color/text_color"
+        android:textColor="@color/font_color"
         android:textSize="24sp"
         android:textStyle="bold" />
 

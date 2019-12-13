@@ -9,6 +9,10 @@
     <string name="continue_as_a_guest">continue as a guest</string>
     <string name="email_address">Email address</string>
     <string name="manual_sign_up">Manual Sign up</string>
+    <string name="home">home</string>
+    <string name="classes">classes</string>
+    <string name="notification">notifications</string>
+    <string name="messages">messages</string>
 
 
     <string-array name="types_of_account">
@@ -17,5 +21,12 @@
         <item>Parent</item>
         <item>Manager</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_schools">My Schools</string>
+    <string name="see_all">See all</string>
+    <string name="add_new">add new</string>
+    <string name="profile_icon">profile icon</string>
 
 </resources>
