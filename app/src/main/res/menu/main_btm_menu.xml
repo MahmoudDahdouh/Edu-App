@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_btm_home"
+        android:icon="@drawable/ic_home_btm"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/main_btm_class"
+        android:icon="@drawable/ic_classes_btm"
+        android:title="@string/classes" />
+
+    <item
+        android:id="@+id/main_btm_messages"
+        android:icon="@drawable/ic_messages_btm"
+        android:title="@string/messages" />
+    <item
+        android:id="main_btm_profile_icon"
+        android:icon="@drawable/ic_profile_btm_"
+        android:title="@string/profile_icon" />
+    <!--    <item-->
+    <!--        android:id="@+id/main_btm_notification"-->
+    <!--        android:icon="@drawable/ic_notification_btm"-->
+    <!--        android:title="@string/notification" />-->
+
+</menu>
