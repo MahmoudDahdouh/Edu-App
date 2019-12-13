@@ -13,6 +13,14 @@ import com.mahmoud.dahdouh.eduapp.R;
 
 public class LoginFragment extends Fragment {
 
+
+    public LoginFragment() {
+    }
+
+    public LoginFragment newInstance() {
+        return new LoginFragment();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
