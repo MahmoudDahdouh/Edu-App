@@ -1,25 +1,38 @@
 package com.mahmoud.dahdouh.eduapp.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.mahmoud.dahdouh.eduapp.Adapter.ActivityAdapter;
+import com.mahmoud.dahdouh.eduapp.Adapter.SchoolsAdapter;
+import com.mahmoud.dahdouh.eduapp.Model.Activity;
+import com.mahmoud.dahdouh.eduapp.Model.School;
 import com.mahmoud.dahdouh.eduapp.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
+ * {@link //HomeFragment.OnFragmentIfnteractionListener} interface
  * to handle interaction events.
  */
 public class HomeFragment extends Fragment {
+    //
+//    private OnFragmentInteractionListener mListener;
 
-    private OnFragmentInteractionListener mListener;
+    private View layout;
+    private RecyclerView schoolsRecycler, activityRecycler;
+    private ArrayList<School> schools;
+    private ArrayList<Activity> activities;
+    private SchoolsAdapter schoolsAdapter;
+    private ActivityAdapter activityAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -29,46 +42,89 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        layout = inflater.inflate(R.layout.fragment_home, container, false);
+
+        setSchoolsRecycler();
+        setActivitiesRecycler();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return layout;
+
+
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+//    // TODO: Rename method, update argument and hook method into UI event
+//    public void onButtonPressed(Uri uri) {
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
+//    }
+
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
+//    }
+//
+//    @Override
+//    public void onDetach() {
+//        super.onDetach();
+//        mListener = null;
+//    }
+
+//    /**
+//     * This interface must be implemented by activities that contain this
+//     * fragment to allow an interaction in this fragment to be communicated
+//     * to the activity and potentially other fragments contained in that
+//     * activity.
+//     * <p>
+//     * See the Android Training lesson <a href=
+//     * "http://developer.android.com/training/basics/fragments/communicating.html"
+//     * >Communicating with Other Fragments</a> for more information.
+//     */
+//    public interface OnFragmentInteractionListener {
+//        // TODO: Update argument type and name
+//        void onFragmentInteraction(Uri uri);
+//    }
+
+
+    private void setSchoolsRecycler() {
+        schoolsRecycler = layout.findViewById(R.id.schools_recyclerview);
+        schools = new ArrayList<>();
+        schools.add(new School(R.drawable.bg_school_item_2, "First School", "Usa"));
+        schools.add(new School(R.drawable.bg_school_item, "High School", "Canada"));
+        schools.add(new School(R.drawable.bg_school_item_3, "Al-Quds School", "Palestine"));
+
+        schoolsAdapter = new SchoolsAdapter(schools);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+
+        schoolsRecycler.setAdapter(schoolsAdapter);
+        schoolsRecycler.setLayoutManager(layoutManager);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    private void setActivitiesRecycler() {
+        activityRecycler = layout.findViewById(R.id.activities_recyclerview);
+
+        activities = new ArrayList<>();
+        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
+        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
+        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
+        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
+        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
+        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
+
+        activityAdapter = new ActivityAdapter(activities);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        activityRecycler.setAdapter(activityAdapter);
+        activityRecycler.setLayoutManager(layoutManager);
+
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

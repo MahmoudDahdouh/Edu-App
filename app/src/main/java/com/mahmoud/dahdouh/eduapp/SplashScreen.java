@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mahmoud.dahdouh.eduapp.Activity.MainActivity;
+
 public class SplashScreen extends AppCompatActivity {
     private final int SPLASH_DISPLAY_LENGTH = 2000;
 

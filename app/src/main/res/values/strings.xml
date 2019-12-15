@@ -28,5 +28,14 @@
     <string name="see_all">See all</string>
     <string name="add_new">add new</string>
     <string name="profile_icon">profile icon</string>
+    <string name="activity">Activity</string>
+    <string name="select_to_add_new">Select to add new</string>
+    <string name="school">School</string>
+    <string name="category">Category</string>
+    <string name="parent">Parent</string>
+    <string name="student">Student</string>
+    <string name="teacher">Teacher</string>
+    <string name="_class">Class</string>
+    <string name="profile">Profile</string>
 
 </resources>

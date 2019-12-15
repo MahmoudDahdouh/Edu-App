@@ -1,4 +1,4 @@
-package com.mahmoud.dahdouh.eduapp;
+package com.mahmoud.dahdouh.eduapp.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -8,9 +8,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.mahmoud.dahdouh.eduapp.Fragment.LoginFragment;
 import com.mahmoud.dahdouh.eduapp.Fragment.SignupFragment;
 
-public class PagerAdapter extends FragmentStateAdapter {
+public class RegisterAdapter extends FragmentStateAdapter {
 
-    public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public RegisterAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

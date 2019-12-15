@@ -1,4 +1,4 @@
-package com.mahmoud.dahdouh.eduapp;
+package com.mahmoud.dahdouh.eduapp.Activity;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,6 +9,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.mahmoud.dahdouh.eduapp.Adapter.RegisterAdapter;
+import com.mahmoud.dahdouh.eduapp.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
@@ -19,12 +21,15 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        //inflate
         tabLayout = findViewById(R.id.tablayout_register);
         viewPager = findViewById(R.id.viewpager_register);
         tv_register_title = findViewById(R.id.tv_login_register);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(this);
-        viewPager.setAdapter(pagerAdapter);
+        //
+        RegisterAdapter registerAdapter = new RegisterAdapter(this);
+        viewPager.setAdapter(registerAdapter);
 
 
         new TabLayoutMediator(tabLayout, viewPager,
