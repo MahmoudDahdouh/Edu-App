@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Edu App</string>
-    <string name="log_in">log in</string>
-    <string name="sign_up">sign up</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
     <string name="log_in_to_your_account">Log in to your account</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -37,5 +37,21 @@
     <string name="teacher">Teacher</string>
     <string name="_class">Class</string>
     <string name="profile">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="discover">Discover</string>
+    <string name="add_new_cap">Add new</string>
+    <string name="add_new_school_teacher_student">Add new school, teacher, student, parent.</string>
+    <string name="teachers">Teachers</string>
+    <string name="view_edit_add_teachers">View, Edit, Add teachers.</string>
+    <string name="schools">Schools</string>
+    <string name="view_edit_add_schools">View, Edit, Add schools.</string>
+    <string name="account_settings">account settings</string>
+    <string name="profile_information">Profile Information</string>
+    <string name="name_email_security">Name, Email, Security.</string>
+    <string name="media">Media</string>
+    <string name="control_your_media_library">Control your media library.</string>
+    <string name="general">general</string>
+    <string name="rate_our_app">Rate Our App</string>
+    <string name="rate_review_us"><![CDATA[Rate & Review us.]]></string>
 
 </resources>

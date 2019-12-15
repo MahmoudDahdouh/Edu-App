@@ -16,6 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
     private TextView tv_register_title;
+    TabLayout.Tab tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //
         RegisterAdapter registerAdapter = new RegisterAdapter(this);
+
         viewPager.setAdapter(registerAdapter);
 
 

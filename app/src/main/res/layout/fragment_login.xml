@@ -80,16 +80,19 @@
             android:layout_height="56dp"
             android:layout_marginTop="@dimen/margin_16"
             android:elevation="4dp"
+            android:textStyle="bold"
             app:backgroundTint="@color/colorPrimary"
             android:text="@string/log_in" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_as_a_guest"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
             android:text="@string/continue_as_a_guest"
+            android:textStyle="bold"
             android:textColor="@color/colorPrimary"
             app:rippleColor="@color/colorPrimary" />
 

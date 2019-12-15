@@ -1,10 +1,14 @@
 package com.mahmoud.dahdouh.eduapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -14,7 +18,9 @@ import com.mahmoud.dahdouh.eduapp.Fragment.SignupFragment;
 import com.mahmoud.dahdouh.eduapp.R;
 
 public class MainActivity extends AppCompatActivity {
-    private BottomNavigationView mainBtmNavi;
+    private BottomNavigationView mainBottomNavigationView;
+    private Toolbar toolbar;
+    private ImageView btm_profile;
     //private TabLayout tab;
     //private ViewPager2 viewPager;
     //private MainViewpagerAdapter adapter;
@@ -25,11 +31,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // inflate
-        mainBtmNavi = findViewById(R.id.main_btm_navi);
+        mainBottomNavigationView = findViewById(R.id.main_btm_navi);
+        toolbar = findViewById(R.id.toolbar);
+
+        btm_profile = toolbar.findViewById(R.id.btn_profile);
+        btm_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
+
 
         openFragment(new HomeFragment());
 
-        mainBtmNavi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        mainBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {

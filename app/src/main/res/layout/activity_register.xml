@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/colorPrimaryDark"
         app:tabRippleColor="@color/colorPrimaryDark"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabSelectedTextColor="@color/colorPrimaryDark" />
 
 

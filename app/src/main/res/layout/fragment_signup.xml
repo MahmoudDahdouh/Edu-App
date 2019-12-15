@@ -101,7 +101,7 @@
             android:layout_marginTop="@dimen/margin_16"
             app:backgroundTint="@color/colorPrimary"
             android:elevation="4dp"
-
+            android:textStyle="bold"
             android:text="@string/sign_up" />
 
 

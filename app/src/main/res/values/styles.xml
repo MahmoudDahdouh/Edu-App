@@ -14,4 +14,9 @@
         <item name="android:layout_marginStart">@dimen/margin_16</item>
         <item name="android:layout_marginEnd">@dimen/margin_16</item>
     </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
