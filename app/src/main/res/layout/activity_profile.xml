@@ -134,6 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
+                    android:lines="1"
                     android:text="@string/add_new_school_teacher_student" />
 
             </LinearLayout>
@@ -171,6 +172,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:layout_height="wrap_content"
                     android:text="@string/view_edit_add_teachers" />
 
@@ -208,6 +211,8 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/view_edit_add_schools" />
@@ -260,6 +265,8 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/name_email_security" />
@@ -297,6 +304,8 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/control_your_media_library" />
@@ -346,6 +355,8 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rate_review_us" />

@@ -30,26 +30,26 @@ public class ActivityAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public ActivityAdapter.RecyclerHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ActivityHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.listitem_activity, parent, false);
 
-        return new ActivityAdapter.RecyclerHolder(v);
+        return new ActivityHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        ActivityAdapter.RecyclerHolder myHolder = (ActivityAdapter.RecyclerHolder) holder;
+        ActivityHolder myHolder = (ActivityHolder) holder;
         myHolder.bind(position);
 
     }
 
-    class RecyclerHolder extends RecyclerView.ViewHolder {
+    class ActivityHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView school;
         private ImageView type;
 
-        RecyclerHolder(@NonNull View itemView) {
+        ActivityHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.activity_item_name);
             school = itemView.findViewById(R.id.activity_item_school_name);

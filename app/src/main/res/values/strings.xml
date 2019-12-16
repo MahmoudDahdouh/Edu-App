@@ -11,8 +11,8 @@
     <string name="manual_sign_up">Manual Sign up</string>
     <string name="home">home</string>
     <string name="classes">classes</string>
-    <string name="notification">notifications</string>
-    <string name="messages">messages</string>
+    <string name="notification">Notifications</string>
+    <string name="messages">Messages</string>
 
 
     <string-array name="types_of_account">
@@ -53,5 +53,6 @@
     <string name="general">general</string>
     <string name="rate_our_app">Rate Our App</string>
     <string name="rate_review_us"><![CDATA[Rate & Review us.]]></string>
+    <string name="my_classes">My Classes</string>
 
 </resources>

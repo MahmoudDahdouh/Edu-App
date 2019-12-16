@@ -12,9 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mahmoud.dahdouh.eduapp.Fragment.ClassFragment;
 import com.mahmoud.dahdouh.eduapp.Fragment.HomeFragment;
-import com.mahmoud.dahdouh.eduapp.Fragment.LoginFragment;
-import com.mahmoud.dahdouh.eduapp.Fragment.SignupFragment;
+import com.mahmoud.dahdouh.eduapp.Fragment.MessagesFragment;
+import com.mahmoud.dahdouh.eduapp.Fragment.NotificationFragment;
 import com.mahmoud.dahdouh.eduapp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,20 +54,18 @@ public class MainActivity extends AppCompatActivity {
                         openFragment(new HomeFragment());
                         break;
                     case R.id.main_btm_messages:
-                        openFragment(new LoginFragment());
+                        openFragment(new MessagesFragment());
                         break;
                     case R.id.main_btm_class:
-                        openFragment(new SignupFragment());
+                        openFragment(new ClassFragment());
                         break;
                     case R.id.main_btm_notification:
-                        openFragment(new HomeFragment());
+                        openFragment(new NotificationFragment());
                         break;
                 }
                 return true;
             }
         });
-
-
     }
 
 
