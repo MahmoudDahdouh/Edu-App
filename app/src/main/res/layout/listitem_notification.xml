@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notif_item_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:orientation="vertical"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="#f7f7f7"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -24,10 +27,11 @@
             android:textStyle="bold" />
 
         <View
+            android:id="@+id/notification_line_view"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="8dp"
-            android:background="#eee"
+            android:background="#ddd"
             android:paddingStart="16dp"
             android:paddingEnd="16dp" />
 
@@ -51,16 +55,15 @@
 
             <TextView
                 android:id="@+id/notif_item_time"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="December 10, 2019"
+                android:layout_gravity="center_vertical"
                 android:textColor="@color/green" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/notif_item_description"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"

@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView mainBottomNavigationView;
     private Toolbar toolbar;
     private ImageView btm_profile;
+
     //private TabLayout tab;
-    //private ViewPager2 viewPager;
+//    private ViewPager2 viewPager;
     //private MainViewpagerAdapter adapter;
 
     @Override

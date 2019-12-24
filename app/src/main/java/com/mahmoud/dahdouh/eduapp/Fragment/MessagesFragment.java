@@ -56,7 +56,9 @@ public class MessagesFragment extends Fragment {
                 "I don't need to go party", "Nov 20, 2019", R.drawable.temp_profile_img_5));
 
         messageAdapter = new MessageAdapter(messages);
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
 
         msgRecycler.setLayoutManager(layoutManager);
         msgRecycler.setAdapter(messageAdapter);

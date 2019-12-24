@@ -5,6 +5,9 @@ public class Notification {
     private String notificationTitle;
     private String notificationTime;
     private String notificationDescription;
+    private boolean read;
+
+
 
     public Notification(String schoolName, String notificationTitle, String notificationTime, String notificationDescription) {
         this.schoolName = schoolName;
@@ -43,5 +46,13 @@ public class Notification {
 
     public void setNotificationDescription(String notificationDescription) {
         this.notificationDescription = notificationDescription;
+    }
+
+    public boolean isRead() {
+        return read;
+    }
+
+    public void setRead(boolean read) {
+        this.read = read;
     }
 }
