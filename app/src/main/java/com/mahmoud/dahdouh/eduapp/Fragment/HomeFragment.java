@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.mahmoud.dahdouh.eduapp.Adapter.ActivityAdapter;
-import com.mahmoud.dahdouh.eduapp.Adapter.SchoolsAdapter;
-import com.mahmoud.dahdouh.eduapp.Adapter.Viewpager2_Adapter;
+import com.mahmoud.dahdouh.eduapp.Adapter.SchoolsViewpagerAdapter;
 import com.mahmoud.dahdouh.eduapp.Model.Activity;
 import com.mahmoud.dahdouh.eduapp.Model.School;
 import com.mahmoud.dahdouh.eduapp.R;
@@ -30,14 +29,12 @@ public class HomeFragment extends Fragment {
 //    private OnFragmentInteractionListener mListener;
 
     private View layout;
-    private RecyclerView schoolsRecycler, activityRecycler;
+    private RecyclerView activityRecycler;
     private ArrayList<School> schools;
     private ArrayList<Activity> activities;
-    private SchoolsAdapter schoolsAdapter;
     private ActivityAdapter activityAdapter;
     private ViewPager2 viewPager2;
-    private ArrayList<String> arrayList = new ArrayList<>();
-    private Viewpager2_Adapter adapter;
+    private SchoolsViewpagerAdapter adapter;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -48,7 +45,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         layout = inflater.inflate(R.layout.fragment_home, container, false);
         setSchoolsViewPager();
-        //setSchoolsRecycler();
         setActivitiesRecycler();
 
         // Inflate the layout for this fragment
@@ -56,21 +52,41 @@ public class HomeFragment extends Fragment {
 
 
     }
-/*
-    private void setViewPager2() {
-        viewPager2 = layout.findViewById(R.id.schools_recyclerview);
+
+    private void setActivitiesRecycler() {
+        activityRecycler = layout.findViewById(R.id.activities_recyclerview);
+
+        activities = new ArrayList<>();
+        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
+        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
+        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
+        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
+        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
+        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
+
+        activityAdapter = new ActivityAdapter(activities);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        activityRecycler.setAdapter(activityAdapter);
+        activityRecycler.setLayoutManager(layoutManager);
+
+    }
+
+    private void setSchoolsViewPager() {
+        viewPager2 = layout.findViewById(R.id.schools_viewpager_2);
         schools = new ArrayList<>();
         schools.add(new School(R.drawable.bg_school_item_2, "First School", "Usa"));
         schools.add(new School(R.drawable.bg_school_item, "High School", "Canada"));
         schools.add(new School(R.drawable.bg_school_item_3, "Al-Quds School", "Palestine"));
 
-        schoolsAdapter = new SchoolsAdapter(schools);
-        viewPager2.setAdapter(schoolsAdapter);
+
+        adapter = new SchoolsViewpagerAdapter(schools);
 
 
-
+        viewPager2.setAdapter(adapter);
     }
-*/
+
+
 //    // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
 //        if (mListener != null) {
@@ -110,52 +126,6 @@ public class HomeFragment extends Fragment {
 //        void onFragmentInteraction(Uri uri);
 //    }
 
-
-    private void setSchoolsRecycler() {
-        //schoolsRecycler = layout.findViewById(R.id.schools_recyclerview);
-        schools = new ArrayList<>();
-        schools.add(new School(R.drawable.bg_school_item_2, "First School", "Usa"));
-        schools.add(new School(R.drawable.bg_school_item, "High School", "Canada"));
-        schools.add(new School(R.drawable.bg_school_item_3, "Al-Quds School", "Palestine"));
-
-        schoolsAdapter = new SchoolsAdapter(schools);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-
-        schoolsRecycler.setAdapter(schoolsAdapter);
-        schoolsRecycler.setLayoutManager(layoutManager);
-    }
-
-    private void setActivitiesRecycler() {
-        activityRecycler = layout.findViewById(R.id.activities_recyclerview);
-
-        activities = new ArrayList<>();
-        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
-        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
-        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
-        activities.add(new Activity("New books", "High School", R.drawable.ic_curriculum));
-        activities.add(new Activity("New Teacher", "First School", R.drawable.ic_teacher));
-        activities.add(new Activity("Graduation Party", "First School", R.drawable.ic_graduation));
-
-        activityAdapter = new ActivityAdapter(activities);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-
-        activityRecycler.setAdapter(activityAdapter);
-        activityRecycler.setLayoutManager(layoutManager);
-
-    }
-
-    private void setSchoolsViewPager() {
-        viewPager2 = layout.findViewById(R.id.schools_viewpager_2);
-        arrayList.add("Item 1");
-        arrayList.add("Item 2");
-        arrayList.add("Item 3");
-        arrayList.add("Item 4");
-        arrayList.add("Item 5");
-        adapter = new Viewpager2_Adapter(getContext(), arrayList);
-
-
-        viewPager2.setAdapter(adapter);
-    }
 
 
 }
