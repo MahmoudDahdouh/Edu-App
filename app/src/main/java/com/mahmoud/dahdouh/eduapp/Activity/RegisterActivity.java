@@ -1,5 +1,6 @@
 package com.mahmoud.dahdouh.eduapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -9,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.auth.FirebaseAuth;
 import com.mahmoud.dahdouh.eduapp.Adapter.RegisterAdapter;
 import com.mahmoud.dahdouh.eduapp.R;
 
@@ -16,6 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
     private TextView tv_register_title;
+    private FirebaseAuth auth;
     TabLayout.Tab tab;
 
     @Override
@@ -70,5 +73,11 @@ public class RegisterActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
+        auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
     }
 }

@@ -26,9 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/username" />
+            android:text="@string/email_address" />
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_log_in_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
@@ -36,7 +37,7 @@
             android:layout_marginEnd="@dimen/margin_16"
             android:background="@drawable/bg_input_fields"
             android:elevation="4dp"
-            android:hint="@string/username"
+            android:hint="@string/email_address"
             android:inputType="textPersonName"
             android:textDirection="locale"
             android:textSize="14sp" />
@@ -49,6 +50,8 @@
             android:text="@string/password" />
 
         <EditText
+            android:id="@+id/ed_log_in_password"
+
             style="@style/edittext_style_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,6 +78,8 @@
             android:entries="@array/types_of_account" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_log_in"
+
             style="@style/edittext_style_register"
             android:layout_width="match_parent"
             android:layout_height="56dp"

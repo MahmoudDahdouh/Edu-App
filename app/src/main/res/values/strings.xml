@@ -56,5 +56,6 @@
     <string name="rate_review_us"><![CDATA[Rate & Review us.]]></string>
     <string name="my_classes">My Classes</string>
     <string name="mask_as_read">Mask as read</string>
+    <string name="log_out">Log out</string>
 
 </resources>

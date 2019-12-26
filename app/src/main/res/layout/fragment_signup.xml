@@ -28,6 +28,7 @@
             android:text="@string/username" />
 
         <EditText
+            android:id="@+id/ed_sign_up_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
@@ -48,6 +49,8 @@
             android:text="@string/email_address" />
 
         <EditText
+            android:id="@+id/ed_sign_up_email"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
@@ -68,6 +71,8 @@
             android:text="@string/password" />
 
         <EditText
+            android:id="@+id/ed_sign_up_password"
+
             style="@style/edittext_style_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,6 +99,7 @@
             android:entries="@array/types_of_account" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up"
             style="@style/edittext_style_register"
 
             android:layout_width="match_parent"
