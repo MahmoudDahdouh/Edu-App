@@ -19,7 +19,6 @@ public class RegisterActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private TextView tv_register_title;
     private FirebaseAuth auth;
-    TabLayout.Tab tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterAdapter registerAdapter = new RegisterAdapter(this);
 
         viewPager.setAdapter(registerAdapter);
-
 
         new TabLayoutMediator(tabLayout, viewPager,
                 new TabLayoutMediator.TabConfigurationStrategy() {

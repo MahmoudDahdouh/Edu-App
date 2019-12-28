@@ -4,17 +4,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mahmoud.dahdouh.eduapp.Adapter.ActivityAdapter;
 import com.mahmoud.dahdouh.eduapp.Adapter.SchoolsViewpagerAdapter;
 import com.mahmoud.dahdouh.eduapp.Model.Activity;
 import com.mahmoud.dahdouh.eduapp.Model.School;
 import com.mahmoud.dahdouh.eduapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,22 +44,68 @@ public class HomeFragment extends Fragment {
     private ActivityAdapter activityAdapter;
     private ViewPager2 viewPager2;
     private SchoolsViewpagerAdapter adapter;
+
+    DatabaseReference dataRef;
+    FirebaseAuth auth;
+    private ImageView school_img;
+    private TextView tv_school_name, tv_school_location;
+
     public HomeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         layout = inflater.inflate(R.layout.fragment_home, container, false);
-        setSchoolsViewPager();
+
+        tv_school_name = layout.findViewById(R.id.school_name_main);
+        tv_school_location = layout.findViewById(R.id.school_location_main);
+        school_img = layout.findViewById(R.id.school_img_main);
+
+        //setSchoolsViewPager();
         setActivitiesRecycler();
+        setData();
 
         // Inflate the layout for this fragment
         return layout;
 
 
+    }
+
+    private void setData() {
+
+        auth = FirebaseAuth.getInstance();
+        // get data
+        final String currentUserId = auth.getCurrentUser().getUid();
+        dataRef = FirebaseDatabase.getInstance()
+                .getReference().child("application/users/" + currentUserId);
+        // Attach a listener to read the data at our posts reference
+        dataRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String school_name = dataSnapshot.child("school_name").getValue(String.class);
+                tv_school_name.setText(school_name);
+
+                String school_location = dataSnapshot.child("school_location").getValue(String.class);
+                tv_school_location.setText(school_location);
+
+                String school_img_url = dataSnapshot.child("school").getValue(String.class);
+                Picasso.get().load(school_img_url)
+                        .placeholder(R.drawable.bg_school_item)
+                        .into(school_img);
+
+                //System.out.println("email : "+email);
+                System.out.println(currentUserId);
+                System.out.println(dataRef.toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
     }
 
     private void setActivitiesRecycler() {
@@ -125,7 +180,6 @@ public class HomeFragment extends Fragment {
 //        // TODO: Update argument type and name
 //        void onFragmentInteraction(Uri uri);
 //    }
-
 
 
 }

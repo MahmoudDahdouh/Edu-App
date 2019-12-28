@@ -82,22 +82,22 @@
             android:inputType="textPassword"
             android:textDirection="locale"
             android:textSize="14sp" />
+        <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:text="@string/account_type" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/account_type" />
-
-        <Spinner
-            style="@style/edittext_style_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_input_fields"
-            android:elevation="4dp"
-            android:entries="@array/types_of_account" />
-
+                <Spinner
+                    style="@style/edittext_style_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input_fields"
+                    android:elevation="4dp"
+                    android:entries="@array/types_of_account" />
+        -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sign_up"
             style="@style/edittext_style_register"

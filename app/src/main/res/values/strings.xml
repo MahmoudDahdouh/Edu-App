@@ -57,5 +57,8 @@
     <string name="my_classes">My Classes</string>
     <string name="mask_as_read">Mask as read</string>
     <string name="log_out">Log out</string>
+    <string name="add_first_school">Add First school</string>
+    <string name="school_name">School name</string>
+    <string name="location">Location</string>
 
 </resources>

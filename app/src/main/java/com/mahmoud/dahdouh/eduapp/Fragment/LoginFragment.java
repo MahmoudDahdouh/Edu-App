@@ -72,8 +72,8 @@ public class LoginFragment extends Fragment {
                             getActivity().finish();
                             Toast.makeText(getContext(), "User Created", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getContext(), "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-
+                            Toast.makeText(getContext(),
+                                    "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

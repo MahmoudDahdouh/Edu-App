@@ -17,13 +17,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.mahmoud.dahdouh.eduapp.Activity.MainActivity;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.mahmoud.dahdouh.eduapp.Activity.AddFirstSchoolActivity;
+import com.mahmoud.dahdouh.eduapp.Model.User;
 import com.mahmoud.dahdouh.eduapp.R;
 
 public class SignupFragment extends Fragment {
     private EditText ed_username, ed_email, ed_password;
     private Button btn_sign_up;
+    // firebase
     private FirebaseAuth auth;
+    private DatabaseReference databaseRef;
 
     public SignupFragment() {
     }
@@ -52,15 +57,34 @@ public class SignupFragment extends Fragment {
                     Toast.makeText(getContext(), "Fill the field", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String email = ed_email.getText().toString();
+                final String email = ed_email.getText().toString();
+                final String username = ed_username.getText().toString();
                 String password = ed_password.getText().toString();
 
+                // Fire base
+                //
+                // Create new User
                 auth = FirebaseAuth.getInstance();
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(getContext(), MainActivity.class));
+
+                            //create new User
+                            User user = new User();
+                            user.setEmail(email);
+                            user.setUsername(username);
+
+                            // Upload user data to firebase realtime database
+                            //get reference
+                            databaseRef = FirebaseDatabase.getInstance().getReference()
+                                    .child("application/users");
+                            // upload with unique ID
+                            databaseRef.child(auth.getCurrentUser().getUid()).setValue(user);
+                            //
+
+                            // go to next activity
+                            startActivity(new Intent(getContext(), AddFirstSchoolActivity.class));
                             getActivity().finish();
                             Toast.makeText(getContext(), "User Created", Toast.LENGTH_SHORT).show();
                         } else {
@@ -68,6 +92,8 @@ public class SignupFragment extends Fragment {
                         }
                     }
                 });
+
+
             }
         });
 

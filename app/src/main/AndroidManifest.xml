@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.AddFirstSchoolActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
